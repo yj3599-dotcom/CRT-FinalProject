@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THE INITIATION: ARCHITECTS PROTOCOL</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="physics-canvas"></div>
+
+    <div id="ui-layer">
+        
+        <div id="top-bar">
+            <div class="status-text">THE ARCHITECTS</div>
+            <div class="status-text">PROTOCOL: <span id="round-display">--</span> / 8</div>
+            <div class="status-text" style="color:#00ff41">TIMER: <span id="timer-display">120</span>s</div>
+        </div>
+
+        <div id="intro-screen" class="panel-box" style="display: flex;">
+            <h1 style="font-size: 40px; color: #fff; margin-bottom: 10px; letter-spacing: 5px;">THE INITIATION</h1>
+            <h3 style="color: #00ff41; margin-top: 0; margin-bottom: 30px;">ETHICAL CALIBRATION SEQUENCE</h3>
+            
+            <div class="typewriter-text">
+                > SYSTEM BOOT: YEAR 2089...<br>
+                > GLOBAL STABILITY: CRITICAL (14%)...<br>
+                > CANDIDATE: 0492 [UNVERIFIED]<br><br>
+                The world has collapsed. Governments are fragile shells. The only thing preventing total anarchy is <strong>The Architects</strong>—a shadow council that makes the hard decisions no one else can.<br><br>
+                We operate on pure logic and absolute duty. We do not need "heroes." We need <strong>consistent decision engines</strong>.<br><br>
+                You are here to be calibrated. We will subject you to <strong>8 High-Stakes Simulations</strong>. There is no "correct" answer, only your programming.<br><br>
+                <strong>MISSION PROTOCOL:</strong><br>
+                1. Analyze the detailed crisis data.<br>
+                2. Hover options to calculate ethical weight.<br>
+                3. <strong>Log your rationale in the dossier.</strong><br>
+                4. Confirm to execute.
+            </div>
+            
+            <button class="action-btn" onclick="startGame()">INITIATE SIMULATION</button>
+        </div>
+
+        <div id="game-screen" class="panel-box">
+            <div id="mission-title">MISSION BRIEFING</div>
+            <div id="scenario-desc">Loading...</div>
+            
+            <div class="choices-wrapper">
+                <div class="choice-btn" id="btn-a" onclick="selectOption('A')">
+                    <div id="text-a">OPTION A</div>
+                    <div class="tooltip" id="tip-a">...</div>
+                </div>
+                
+                <div class="choice-btn" id="btn-b" onclick="selectOption('B')">
+                    <div id="text-b">OPTION B</div>
+                    <div class="tooltip" id="tip-b">...</div>
+                </div>
+            </div>
+
+            <div id="action-area">
+                <div id="log-reminder">⚠ RECORD YOUR DECISION IN GAME LOG BEFORE CONFIRMING</div>
+                <button id="confirm-btn" class="action-btn" onclick="confirmChoice()" disabled>CONFIRM SELECTION</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="panel-box">
+            <h1 style="color:#fff; margin-bottom: 10px;">EVALUATION COMPLETE</h1>
+            <h2 id="result-title" style="color:#00ff41; margin-top:0;">CALCULATING...</h2>
+            
+            <div id="score-breakdown">UTILITARIAN: 0 | DEONTOLOGY: 0</div>
+
+            <div class="result-bar-container">
+                <div class="bar-label label-left">EFFICIENCY (UTILITARIAN)</div>
+                <div class="bar-label label-right">PRINCIPLE (DEONTOLOGY)</div>
+                <div id="result-bar" class="result-bar-fill"></div>
+            </div>
+
+            <div id="result-analysis" class="analysis-text">
+                </div>
+
+            <p style="color:yellow; font-weight:bold;">FINAL STEP: Ensure your Game Log is complete before closing this window.</p>
+            <button class="action-btn" onclick="location.reload()">RETAKE TEST</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
